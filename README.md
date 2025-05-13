@@ -1,4 +1,4 @@
-# UniT
+# DiffOG
 
 The template of this website is adapted from https://github.com/nerfies/nerfies.github.io
 
