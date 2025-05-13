@@ -39,6 +39,126 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+  
+  <style>
+    :root {
+      --primary-color: #6A4C93;
+      --secondary-color: #8A689C;
+      --accent-color: #9A77B8;
+      --light-bg: #f5f7fa;
+    }
+    
+    .hero {
+      background-color: #fff;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+      position: relative;
+    }
+    
+    .hero:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 0;
+      background: transparent;
+    }
+    
+    .hero-body {
+      padding-top: 4.5rem;
+      padding-bottom: 3rem;
+    }
+    
+    .publication-title {
+      line-height: 1.2;
+      font-family: 'Google Sans', 'Noto Sans', sans-serif;
+    }
+    
+    .diffog-gradient {
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    h2.title.is-3 {
+      color: #222;
+      margin-bottom: 1.5rem;
+      font-family: 'Google Sans', 'Noto Sans', sans-serif;
+      position: relative;
+    }
+    
+    h2.title.is-3:after {
+      content: none;
+      display: none;
+    }
+    
+    .section {
+      padding: 2.5rem 1.5rem;
+    }
+    
+    .content p {
+      font-family: 'Noto Sans', sans-serif;
+    }
+    
+    .content a:not(.button):not(.external-link) {
+      color: hsl(204, 86%, 53%) !important;
+    }
+    
+    .content a:not(.button):not(.external-link):hover {
+      text-decoration: underline;
+    }
+    
+    .external-link.button.is-normal.is-rounded.is-dark {
+      background-color: var(--primary-color);
+      transition: background-color 0.3s ease;
+    }
+    
+    .external-link.button.is-normal.is-rounded.is-dark:hover {
+      background-color: var(--secondary-color);
+    }
+    
+    .caption {
+      color: #333;
+      font-weight: 500;
+      font-family: 'Noto Sans', sans-serif;
+      font-size: 0.95em;
+    }
+    
+    .content h4.title.is-5 {
+      color: #222;
+      margin-bottom: 0.75rem;
+      font-family: 'Google Sans', 'Noto Sans', sans-serif;
+      font-weight: 600;
+    }
+    
+    .is-size-5.publication-authors {
+      font-family: 'Noto Sans', sans-serif;
+    }
+    
+    video {
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    
+    video:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    }
+    
+    .button {
+      font-family: 'Google Sans', 'Noto Sans', sans-serif;
+    }
+    
+    code {
+      font-family: 'Castoro', monospace;
+    }
+    
+    .section:nth-child(odd) {
+      background-color: #fcfcfc;
+    }
+  </style>
 </head>
 <body>
 
@@ -48,7 +168,10 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">DiffOG: Differentiable Policy Trajectory Optimization with Generalizability</h1>
+          <h1 class="title is-1 publication-title">
+            <span class="diffog-gradient" style="font-size: 1.2em; display: block; margin-bottom: 0.2em; font-weight: 700; font-family: 'Google Sans', 'Noto Sans', sans-serif;">DiffOG</span>
+            <span style="font-size: 0.6em; color: #333; display: block; margin-top: 0.3em; font-family: 'Google Sans', 'Noto Sans', sans-serif;">Differentiable Policy Trajectory Optimization with Generalizability</span>
+          </h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="https://zhengtongxu.github.io/website/">Zhengtong Xu</a>,</span>
@@ -121,22 +244,7 @@
         </div>
         <div class="content has-text-justified">
           <p>
-          Imitation learning-based visuomotor policies excel
-          at manipulation tasks but often produce suboptimal action
-          trajectories compared to model-based methods. Directly mapping camera data to actions via neural networks can result in
-          jerky motions and difficulties in meeting critical constraints,
-          compromising safety and robustness in real-world deployment.
-          For tasks that require high robustness or strict adherence to
-          constraints, ensuring trajectory quality is crucial. However, the
-          lack of interpretability in neural networks makes it challenging
-          to generate constraint-compliant actions in a controlled manner.
-          This paper introduces differentiable policy trajectory optimization with generalizability (DiffOG), a learning-based trajectory
-          optimization framework designed to enhance visuomotor policies. By leveraging the proposed differentiable formulation of
-          trajectory optimization with transformer, DiffOG seamlessly
-          integrates policies with a generalizable optimization layer.
-          Visuomotor policies enhanced by DiffOG generate smoother,
-          constraint-compliant action trajectories in a more interpretable
-          way. We demonstrate the effectiveness of DiffOG on a variety of
+            Imitation learning-based visuomotor policies excel at manipulation tasks but often produce suboptimal action trajectories compared to model-based methods. Directly mapping camera data to actions via neural networks can result in jerky motions and difficulties in meeting critical constraints, compromising safety and robustness in real-world deployment. For tasks that require high robustness or strict adherence to constraints, ensuring trajectory quality is crucial. However, the lack of interpretability in neural networks makes it challenging to generate constraint-compliant actions in a controlled manner. This paper introduces differentiable policy trajectory optimization with generalizability (DiffOG), a learning-based trajectory optimization framework designed to enhance visuomotor policies. By leveraging the proposed differentiable formulation of trajectory optimization with transformer, DiffOG seamlessly integrates policies with a generalizable optimization layer. Visuomotor policies enhanced by DiffOG generate smoother, constraint-compliant action trajectories in a more interpretable way.
           </p>
         </div>
       </div>
@@ -145,38 +253,308 @@
   </div>
 </section>
 
+<!-- Simulation Benchmark Videos Section -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Simulation Benchmark</h2>
+    <!-- Space for text above videos -->
+    <div class="content has-text-justified">
+      <p class="has-text-centered">
+        <!-- Text description above the simulation videos can be added here -->
+      </p>
+    </div>
 
+    <!-- First Row: 6 Non-metaworld Videos -->
+    <div class="columns is-multiline is-centered">
+      <!-- Lift video -->
+      <div class="column is-2">
+        <div class="content has-text-centered">
+          <video id="lift-video" autoplay muted loop playsinline width="100%">
+            <source src="./static/videos/sim/lift.mp4" type="video/mp4">
+          </video>
+          <p class="caption">Lift<sup>1</sup></p>
+        </div>
+      </div>
+      
+      <!-- Can video -->
+      <div class="column is-2">
+        <div class="content has-text-centered">
+          <video id="can-video" autoplay muted loop playsinline width="100%">
+            <source src="./static/videos/sim/can.mp4" type="video/mp4">
+          </video>
+          <p class="caption">Can<sup>1</sup></p>
+        </div>
+      </div>
+      
+      <!-- Square video -->
+      <div class="column is-2">
+        <div class="content has-text-centered">
+          <video id="square-video" autoplay muted loop playsinline width="100%">
+            <source src="./static/videos/sim/square.mp4" type="video/mp4">
+          </video>
+          <p class="caption">Square<sup>1</sup></p>
+        </div>
+      </div>
+      
+      <!-- Tool hang video -->
+      <div class="column is-2">
+        <div class="content has-text-centered">
+          <video id="tool-hang-video" autoplay muted loop playsinline width="100%">
+            <source src="./static/videos/sim/tool_hang.mp4" type="video/mp4">
+          </video>
+          <p class="caption">Tool Hang<sup>1</sup></p>
+        </div>
+      </div>
+      
+      <!-- Transport video -->
+      <div class="column is-2">
+        <div class="content has-text-centered">
+          <video id="transport-video" autoplay muted loop playsinline width="100%">
+            <source src="./static/videos/sim/transport.mp4" type="video/mp4">
+          </video>
+          <p class="caption">Transport<sup>1</sup></p>
+        </div>
+      </div>
+      
+      <!-- Pusht video -->
+      <div class="column is-2">
+        <div class="content has-text-centered">
+          <video id="pusht-video" autoplay muted loop playsinline width="100%">
+            <source src="./static/videos/sim/pusht.mp4" type="video/mp4">
+          </video>
+          <p class="caption">Push-T<sup>2</sup></p>
+        </div>
+      </div>
+    </div>
 
+    <!-- Second Row: 5 Metaworld Videos -->
+    <div class="columns is-multiline is-centered">
+      <!-- Empty space for alignment -->
+      <div class="column is-1"></div>
+      
+      <!-- Disassemble Expert -->
+      <div class="column is-2">
+        <div class="content has-text-centered">
+          <video id="metaworld-disassemble-video" autoplay muted loop playsinline width="100%">
+            <source src="./static/videos/sim/metaworld_disassemble_expert.mp4" type="video/mp4">
+          </video>
+          <p class="caption">Disassemble<sup>3</sup></p>
+        </div>
+      </div>
+      
+      <!-- Pick Place Wall -->
+      <div class="column is-2">
+        <div class="content has-text-centered">
+          <video id="metaworld-pick-place-wall-video" autoplay muted loop playsinline width="100%">
+            <source src="./static/videos/sim/metaworld_pick-place-wall_expert.mp4" type="video/mp4">
+          </video>
+          <p class="caption">Pick Place Wall<sup>3</sup></p>
+        </div>
+      </div>
+      
+      <!-- Shelf Place -->
+      <div class="column is-2">
+        <div class="content has-text-centered">
+          <video id="metaworld-shelf-place-video" autoplay muted loop playsinline width="100%">
+            <source src="./static/videos/sim/metaworld_shelf-place_expert.mp4" type="video/mp4">
+          </video>
+          <p class="caption">Shelf Place<sup>3</sup></p>
+        </div>
+      </div>
+      
+      <!-- Stick Pull -->
+      <div class="column is-2">
+        <div class="content has-text-centered">
+          <video id="metaworld-stick-pull-video" autoplay muted loop playsinline width="100%">
+            <source src="./static/videos/sim/metaworld_stick-pull_expert.mp4" type="video/mp4">
+          </video>
+          <p class="caption">Stick Pull<sup>3</sup></p>
+        </div>
+      </div>
+      
+      <!-- Stick Push -->
+      <div class="column is-2">
+        <div class="content has-text-centered">
+          <video id="metaworld-stick-push-video" autoplay muted loop playsinline width="100%">
+            <source src="./static/videos/sim/metaworld_stick-push_expert.mp4" type="video/mp4">
+          </video>
+          <p class="caption">Stick Push<sup>3</sup></p>
+        </div>
+      </div>
+      
+      <!-- Empty space for alignment -->
+      <div class="column is-1"></div>
+    </div>
 
-
-<section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX</h2>
-    <pre><code>                    
-      @misc{xu2025diffog,
-        title={{DiffOG}: Differentiable Policy Trajectory Optimization with Generalizability},
-        author={Zhengtong Xu and Zichen Miao and Qiang Qiu and Zhe Zhang and Yu She},
-        year={2025},
-        eprint={2504.13807},
-        archivePrefix={arXiv},
-        primaryClass={cs.RO},
-        url={https://arxiv.org/abs/2504.13807},
-      }
-    </code></pre>
+    <!-- Space for text below videos -->
+    <div class="content has-text-justified mt-4">
+      <p class="has-text-centered" style="font-weight: 400; color: #666; font-family: 'Noto Sans', sans-serif; border-top: 1px dotted #e5e5e5; padding-top: 12px; margin-top: 20px; font-size: 0.95em;">
+        <sup>1</sup>Robomimic &nbsp;&nbsp;
+        <sup>2</sup>Diffusion Policy &nbsp;&nbsp;
+        <sup>3</sup>MetaWorld &nbsp;&nbsp;
+        <!-- Space for adding links later -->
+      </p>
+    </div>
   </div>
 </section>
 
-<footer class="footer">
+<!-- Realworld Move the Stack Task Section -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Realworld Move the Stack Task</h2>
+    <!-- Introduction text -->
+    <div class="content has-text-justified">
+      <p>
+        <!-- Text description for Move the Stack task can be added here -->
+      </p>
+    </div>
+
+    <!-- First row of videos: Move the stack and rollout -->
+    <div class="columns is-centered">
+      <!-- Move The Stack.mp4 -->
+      <div class="column is-half">
+        <div class="content has-text-centered">
+          <h4 class="title is-5">Stack Movement</h4>
+          <video id="move-stack-video" autoplay muted loop controls playsinline height="100%">
+            <source src="./static/videos/real/Move The Stack.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      
+      <!-- Stack Rollout.mp4 -->
+      <div class="column is-half">
+        <div class="content has-text-centered">
+          <h4 class="title is-5">Stack Rollout</h4>
+          <video id="stack-rollout-video" autoplay muted loop controls playsinline height="100%">
+            <source src="./static/videos/real/Stack Rollout.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+
+    <!-- Text description for comparison videos -->
+    <div class="content has-text-justified mt-6">
+      <p>
+        <!-- Text description for Stack comparison and fail videos can be added here -->
+      </p>
+    </div>
+
+    <!-- Second row of videos: Stack comparison and fail -->
+    <div class="columns is-centered">
+      <!-- Stack Comp.mp4 -->
+      <div class="column is-half">
+        <div class="content has-text-centered">
+          <h4 class="title is-5">Stack Comparison</h4>
+          <video id="stack-comp-video" autoplay muted loop controls playsinline height="100%">
+            <source src="./static/videos/real/Stack Comp.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      
+      <!-- Stack Fail.mp4 -->
+      <div class="column is-half">
+        <div class="content has-text-centered">
+          <h4 class="title is-5">Stack Failure Case</h4>
+          <video id="stack-fail-video" autoplay muted loop controls playsinline height="100%">
+            <source src="./static/videos/real/Stack Fail.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Realworld Arrange Desk Task Section -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Realworld Arrange Desk Task</h2>
+    <!-- Introduction text -->
+    <div class="content has-text-justified">
+      <p>
+        <!-- Text description for Arrange Desk task can be added here -->
+      </p>
+    </div>
+
+    <!-- First row of videos: Arrange the desk and rollout -->
+    <div class="columns is-centered">
+      <!-- Arrange The Desk.mp4 -->
+      <div class="column is-half">
+        <div class="content has-text-centered">
+          <h4 class="title is-5">Desk Arrangement</h4>
+          <video id="arrange-desk-video" autoplay muted loop controls playsinline height="100%">
+            <source src="./static/videos/real/Arrange The Desk.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      
+      <!-- Desk Rollout.mp4 -->
+      <div class="column is-half">
+        <div class="content has-text-centered">
+          <h4 class="title is-5">Desk Rollout</h4>
+          <video id="desk-rollout-video" autoplay muted loop controls playsinline height="100%">
+            <source src="./static/videos/real/Desk Rollout.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+
+    <!-- Text description for CC and PO videos -->
+    <div class="content has-text-justified mt-6">
+      <p>
+        <!-- Text description for Desk CC and PO videos can be added here -->
+      </p>
+    </div>
+
+    <!-- Second row of videos: Desk CC and PO -->
+    <div class="columns is-centered">
+      <!-- Desk Cc.mp4 -->
+      <div class="column is-half">
+        <div class="content has-text-centered">
+          <h4 class="title is-5">Desk CC</h4>
+          <video id="desk-cc-video" autoplay muted loop controls playsinline height="100%">
+            <source src="./static/videos/real/Desk Cc.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      
+      <!-- Desk Po.mp4 -->
+      <div class="column is-half">
+        <div class="content has-text-centered">
+          <h4 class="title is-5">Desk PO</h4>
+          <video id="desk-po-video" autoplay muted loop controls playsinline height="100%">
+            <source src="./static/videos/real/Desk Po.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-3 has-text-centered">BibTeX</h2>
+    <pre style="background: #f8f8f8; border-radius: 6px; box-shadow: 0 1px 6px rgba(0,0,0,0.05); font-family: 'Castoro', monospace;"><code>@misc{xu2025diffog,
+  title={{DiffOG}: Differentiable Policy Trajectory Optimization with Generalizability},
+  author={Zhengtong Xu and Zichen Miao and Qiang Qiu and Zhe Zhang and Yu She},
+  year={2025},
+  eprint={2504.13807},
+  archivePrefix={arXiv},
+  primaryClass={cs.RO},
+  url={https://arxiv.org/abs/2504.13807},
+}</code></pre>
+  </div>
+</section>
+
+<footer class="footer" style="background-color: #fafafa; padding-top: 3rem; border-top: 1px solid #eee;">
   <div class="container">
     <div class="content has-text-centered">
-      <a class="icon-link" href="https://github.com/ZhengtongXu" class="external-link" disabled>
+      <a class="icon-link" href="https://github.com/ZhengtongXu" style="color: #555; font-size: 1.5em; margin: 0 10px;">
         <i class="fab fa-github"></i>
       </a>
     </div>
     <div class="columns is-centered">
       <div class="column is-8">
-        <div class="content">
-          <p>
+        <div class="content">            <p>
             This website is licensed under a <a rel="license"
                                                 href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
             Commons Attribution-ShareAlike 4.0 International License</a>.
