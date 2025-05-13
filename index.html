@@ -405,7 +405,7 @@
     <!-- Introduction text -->
     <div class="content has-text-justified">
       <p>
-        <!-- Text description for Move the Stack task can be added here -->
+        The Move the Stack task requires the robot to stably grasp, transport, and place both a cup and a spoon. This task is highly sensitive to trajectory quality, jerky or unstable motions can easily cause the spoon to fall during transit.
       </p>
     </div>
 
@@ -435,7 +435,7 @@
     <!-- Text description for comparison videos -->
     <div class="content has-text-justified mt-6">
       <p>
-        <!-- Text description for Stack comparison and fail videos can be added here -->
+        Compared to the policy with DiffOG, the base policy without trajectory optimization exhibits more unconstrained motions, leading to a lower task success rate. For the baseline methods (constraint clipping and penalty-based optimization), although they enforce motion constraints during trajectory optimization, they often cause the optimized trajectories to deviate from the original human demonstrations, which in turn degrades the policy's performance.
       </p>
     </div>
 
@@ -471,7 +471,7 @@
     <!-- Introduction text -->
     <div class="content has-text-justified">
       <p>
-        <!-- Text description for Arrange Desk task can be added here -->
+        Arrange Desk is a dual-arm, long-horizon task. DiffOG effectively optimizes such complex trajectories by producing smoother and more constrained action sequences, while preserving distributional alignment between the policy outputs and the human demonstration data. This ensures that the policy performance remains unaffected by the optimization process.
       </p>
     </div>
 
@@ -501,7 +501,7 @@
     <!-- Text description for CC and PO videos -->
     <div class="content has-text-justified mt-6">
       <p>
-        <!-- Text description for Desk CC and PO videos can be added here -->
+      Baseline methods (constraint clipping and penalty-based optimization) enforce motion constraints during trajectory optimization. However, this often leads to deviations from the original human demonstrations, ultimately degrading policy performance. In this task, such degradation commonly manifests as failure cases where the robot fails to successfully grasp the bowl.
       </p>
     </div>
 
